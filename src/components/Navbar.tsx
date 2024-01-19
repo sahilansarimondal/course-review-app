@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Button } from "./Button";
 import SearchBar from "./SearchBar";
+import getUserData from "@/lib/getUserData";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const session = await getUserData()
+  console.log(session)
   return (
     <div className=" flex justify-between p-3 bg-slate-900 font-black text-black">
       <div className="flex ">
@@ -43,7 +46,7 @@ export default function Navbar() {
             alt="menu"
           />
         </div>
-        <Button name="Sign In" />
+        <Button name={session? "login": "signin"} />
       </div>
     </div>
   );

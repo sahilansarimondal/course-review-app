@@ -1,9 +1,17 @@
+
+import Banner from "@/components/Banner";
 import getUserData from "@/lib/getUserData";
-import { Button } from "@/components/Button";
+
+
+
 export default async function Home() {
   const session = await getUserData();
   console.log(session);
-  return <div>hello</div>;
+  return (
+    <div className=" p-2">
+      <Banner />
+    </div>
+  );
 }
 // authentication system
 {
