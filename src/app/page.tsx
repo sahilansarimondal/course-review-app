@@ -1,8 +1,6 @@
-
 import Banner from "@/components/Banner";
+import FeaturedPost from "@/components/FeaturedPost";
 import getUserData from "@/lib/getUserData";
-
-
 
 export default async function Home() {
   const session = await getUserData();
@@ -10,6 +8,7 @@ export default async function Home() {
   return (
     <div className=" p-2">
       <Banner />
+      <FeaturedPost />
     </div>
   );
 }
